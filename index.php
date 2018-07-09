@@ -41,7 +41,7 @@ else
                         <th>Saldo</th>
                     </tr>
                 </thead>
-                <tbody class="bg-info">
+                <tbody class="bg-light">
                     <tr>
                         <td><?php echo $_SESSION['online']['agencia'];?> </td>
                         <td><?php echo $_SESSION['online']['conta'];?></td>
@@ -57,6 +57,8 @@ else
             <hr class="my-4">
 
             <h5>Movimentações <span class="badge badge-success">Acompanhamento</span></h5>
+
+            <a style="margin-top: 20px; margin-bottom: 20px;" class="btn btn-info" href="transacao.php">FAZER TRANSAÇÃO</a>
 
             <table class="table table-hover table-striped">
                 <thead>
@@ -81,7 +83,17 @@ else
                                     <td class="id"><?php echo $item['id']; ?></td>
                                     <td class="tipo"><? echo $item['tipo'];?></td>
                                     <td class="data"><?php echo date("d/m/Y H:i", strtotime($item['data_operacao']));?></td>
-                                    <td class="valor"><?php echo $item['valor']; ?></td>
+                                    <td class="valor">
+                                        <?php
+                                            if($item['tipo'] == 1){
+                                                echo "-".$item['valor'];
+                                            } 
+                                            else
+                                            {
+                                                echo $item['valor'];
+                                            }
+                                        ?>
+                                     </td>
                                 </tr>
                         <?php
                             }
