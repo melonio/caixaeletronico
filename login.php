@@ -34,7 +34,7 @@
 <body>
     <main class="container rounded">
 
-    <h1 class="text-primary text-center">Banco XYZ</h1>
+    <h1 style="margin-top: 40px; margin-bottom: 40px;" class="text-primary text-center"><span class="badge badge-info">Melonio BankCode</span></h1>
     <h3 class="text-secondary h5 text-center">Acesse já sua conta!</h3>
     <div class="row d-flex justify-content-center">
         <div class="col-sm-6">

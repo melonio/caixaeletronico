@@ -56,7 +56,7 @@ else
             <p class="lead">Suas transações de forma rápida, fácil e segura!</p>
             <hr class="my-4">
 
-            <h5>Movimentações <span class="badge badge-success">Acompanhamento</span></h5>
+            <h4 class="text-center">Movimentações <span class="badge badge-success">Acompanhamento</span></h4>
 
             <a style="margin-top: 20px; margin-bottom: 20px;" class="btn btn-info" href="transacao.php">FAZER TRANSAÇÃO</a>
 

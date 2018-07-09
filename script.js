@@ -19,9 +19,27 @@ $(function(){
             }
         });
 
+        $('.table').addClass("table-sm")
+
+        $('.btn').addClass("btn-sm");
+
         // $("table").on("select", function(e){
         //     e.preventDefault();
         // });
+
+        $("#seletor").on("change", function(){
+            
+            if($(this).val() == "1")
+            {
+                $("#btn-ts").removeAttr("value").attr("value", "FAZER SAQUE").removeClass("btn-success").addClass("btn-warning");
+            }
+            else
+            {
+                $("#btn-ts").removeAttr("value").attr("value", "FAZER DEPÓSITO").removeClass("btn-warning").addClass("btn-success");
+            }
+        });
+
+        
     })
 
 })
