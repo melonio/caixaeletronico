@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 require "config.php";
 if(isset($_SESSION['online']) && !empty($_SESSION['online']))
@@ -17,7 +17,7 @@ else
 {
     header("Location: login.php");
 }
-?>
+?> -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,10 +30,10 @@ else
 
     <main class="container">
         <div class="jumbotron bg-white">
-            <h4>Olá, <?php echo $_SESSION['online']['titular'];?> <span class="badge badge-info">Painel</span></h4>
+            <h4>Olá, Usuário!<!--<?php echo $_SESSION['online']['titular'];?>--> <span class="badge badge-info">Painel</span></h4>
             <!-- <div class="display-4">Olá, <?//php echo $_SESSION['online']['titular'];?></div> -->
 
-            <table style="border-radius=14px;" class="table text-center table-bordered table-striped table-hover">
+            <table style="border-radius:14px;" class="table text-center table-bordered table-striped table-hover">
                 <thead class="thead-dark">
                     <tr class="">
                         <th>Agência</th>
@@ -43,14 +43,14 @@ else
                 </thead>
                 <tbody class="bg-light">
                     <tr>
-                        <td><?php echo $_SESSION['online']['agencia'];?> </td>
-                        <td><?php echo $_SESSION['online']['conta'];?></td>
-                        <td>R$ <?php echo $saldo['saldo'];?></td>
+                        <td>1321-2<!--<?php echo $_SESSION['online']['agencia'];?>--> </td>
+                        <td>3221-2<!--<?php echo $_SESSION['online']['conta'];?>--></td>
+                        <td>R$ 300<!-- <?php echo $saldo['saldo'];?> --></td>
                     </tr>
                 </tbody>
             </table>
             <div class="d-flex justify-content-end">
-                <a class="btn btn-danger col-3" href="sair.php">Sair</a>
+                <a class="btn btn-danger col-3" href="#">Sair</a>
             </div>
 
             <p class="lead">Suas transações de forma rápida, fácil e segura!</p>
@@ -58,7 +58,7 @@ else
 
             <h4 class="text-center">Movimentações <span class="badge badge-success">Acompanhamento</span></h4>
 
-            <a style="margin-top: 20px; margin-bottom: 20px;" class="btn btn-info" href="transacao.php">FAZER TRANSAÇÃO</a>
+            <a style="margin-top:20px;margin-bottom:20px;" class="btn btn-info" href="transacao.html">FAZER TRANSAÇÃO</a>
 
             <table class="table table-hover table-striped">
                 <thead>
@@ -70,7 +70,7 @@ else
                     </tr>
                 </thead>
                 <tbody id="mvs">
-                        <?php
+                        <!-- <?php
                         $sql = $pdo->prepare("SELECT*FROM historico WHERE id_conta = :id_conta");
                         $sql->bindValue(":id_conta", $_SESSION["online"]["id"]);
                         $sql->execute();
@@ -78,13 +78,13 @@ else
                         {
                             foreach($sql->fetchAll() as $item)
                             {
-                        ?>
+                        ?> -->
                                 <tr>
-                                    <td class="id"><?php echo $item['id']; ?></td>
-                                    <td class="tipo"><? echo $item['tipo'];?></td>
-                                    <td class="data"><?php echo date("d/m/Y H:i", strtotime($item['data_operacao']));?></td>
-                                    <td class="valor">
-                                        <?php
+                                    <td class="id">1<!--<?php echo $item['id']; ?>--></td>
+                                    <td class="tipo">0<!--<? echo $item['tipo'];?>--></td>
+                                    <td class="data">11/04/2018 23:50<!--<?php echo date("d/m/Y H:i", strtotime($item['data_operacao']));?>--></td>
+                                    <td class="valor"> R$300
+                                        <!-- <?php
                                             if($item['tipo'] == 1){
                                                 echo "-".$item['valor'];
                                             } 
@@ -92,13 +92,13 @@ else
                                             {
                                                 echo $item['valor'];
                                             }
-                                        ?>
+                                        ?> -->
                                      </td>
                                 </tr>
-                        <?php
+                        <!-- <?php
                             }
                         }
-                    ?>
+                    ?> -->
                 </tbody>
             </table>
             
